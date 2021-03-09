@@ -15,4 +15,9 @@
     <PackageReference Include="Stripe.net" Version="39.39.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Taste.DataAccess\Grouper.DataAccess.csproj" />
+    <ProjectReference Include="..\Taste.Models\Grouper.Models.csproj" />
+  </ItemGroup>
+
 </Project>

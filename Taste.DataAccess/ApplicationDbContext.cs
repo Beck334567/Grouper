@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Grouper.Data
+namespace Grouper.DataAccess
 {
     public class ApplicationDbContext : IdentityDbContext
     {

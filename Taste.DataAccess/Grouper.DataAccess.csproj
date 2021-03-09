@@ -10,4 +10,16 @@
     <PackageReference Include="Stripe.net" Version="39.39.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+    <Folder Include="Initializer\" />
+    <Folder Include="Repository\IRepository\" />
+    <Folder Include="Repository\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Taste.Models\Grouper.Models.csproj" />
+    <ProjectReference Include="..\Taste.Utitlity\Grouper.Utility.csproj" />
+  </ItemGroup>
+
 </Project>
