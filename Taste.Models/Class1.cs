@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Taste.Models
+namespace Grouper.Models
 {
     public class Class1
     {

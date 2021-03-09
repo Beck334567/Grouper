@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Taste.DataAccess
+namespace Grouper.DataAccess
 {
     public class Class1
     {

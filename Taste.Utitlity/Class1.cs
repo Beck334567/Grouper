@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Taste.Utitlity
+namespace Grouper.Utility
 {
     public class Class1
     {

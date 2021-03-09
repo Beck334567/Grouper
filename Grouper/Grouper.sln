@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grouper", "Grouper.csproj", "{F7B754B3-313C-4252-8FD0-D33A28CB2C9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taste.DataAccess", "..\Taste.DataAccess\Taste.DataAccess.csproj", "{D8F16D6B-5AE6-4B3C-8BCF-D06012F73846}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grouper.DataAccess", "..\Taste.DataAccess\Grouper.DataAccess.csproj", "{D8F16D6B-5AE6-4B3C-8BCF-D06012F73846}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taste.Models", "..\Taste.Models\Taste.Models.csproj", "{C1659EEA-188B-4BAD-BD82-502EF474C1DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grouper.Models", "..\Taste.Models\Grouper.Models.csproj", "{C1659EEA-188B-4BAD-BD82-502EF474C1DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taste.Utility", "..\Taste.Utitlity\Taste.Utility.csproj", "{326F68FC-940E-4BF8-9E8B-5711C3319FA4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grouper.Utility", "..\Taste.Utitlity\Grouper.Utility.csproj", "{326F68FC-940E-4BF8-9E8B-5711C3319FA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
