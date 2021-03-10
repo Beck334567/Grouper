@@ -21,9 +21,13 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< Updated upstream
     <Folder Include="Pages\Admin\" />
     <Folder Include="Pages\Customer\Cart\" />
     <Folder Include="Pages\Customer\Home\" />
+=======
+    <Folder Include="wwwroot\images\" />
+>>>>>>> Stashed changes
   </ItemGroup>
 
 </Project>
