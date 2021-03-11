@@ -1,11 +1,9 @@
-﻿using System;
+﻿using Grouper.DataAccess.Data.Repository.IRepository;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using Grouper.DataAccess.Data.Repository.IRepository;
-using Microsoft.EntityFrameworkCore;
 
 namespace Grouper.DataAccess.Data.Repository
 {
@@ -36,20 +34,20 @@ namespace Grouper.DataAccess.Data.Repository
         public IEnumerable<T> GetAll(System.Linq.Expressions.Expression<Func<T, bool>> filter = null, Func<System.Linq.IQueryable<T>, System.Linq.IOrderedQueryable<T>> orderBy = null, string includeProperties = null)
         {
             IQueryable<T> query = DbSet;
-            if (query!=null)
+            if (query != null)
             {
                 query = query.Where(filter);
             }
 
-            if (includeProperties!=null)
+            if (includeProperties != null)
             {
-                foreach (var includeProperty in includeProperties.Split(new char[] { ','},StringSplitOptions.RemoveEmptyEntries))
+                foreach (var includeProperty in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                 {
                     query = query.Include(includeProperty);
                 }
             }
 
-            if (orderBy!=null)
+            if (orderBy != null)
             {
                 return orderBy(query).ToList();
             }

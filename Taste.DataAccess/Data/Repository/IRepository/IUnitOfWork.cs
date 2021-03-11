@@ -1,7 +1,11 @@
-﻿namespace Grouper.DataAccess.Data.Repository.IRepository
+﻿using System;
+
+namespace Grouper.DataAccess.Data.Repository.IRepository
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
-        
+        ICategoryRepository Category { get; }
+
+        void Save();
     }
 }

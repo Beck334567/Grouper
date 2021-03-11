@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Grouper.Utility
+﻿namespace Grouper.Utility
 {
     public class Class1
     {

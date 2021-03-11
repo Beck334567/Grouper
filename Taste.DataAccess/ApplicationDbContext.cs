@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Grouper.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Grouper.DataAccess
 {
@@ -12,5 +10,7 @@ namespace Grouper.DataAccess
             : base(options)
         {
         }
+
+        public DbSet<Category> Category { get; set; }
     }
 }
