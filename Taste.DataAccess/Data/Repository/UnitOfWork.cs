@@ -2,7 +2,7 @@
 
 namespace Grouper.DataAccess.Data.Repository
 {
-    internal class UnitOfWork : IUnitOfWork
+     class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _db;
 
