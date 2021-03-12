@@ -22,13 +22,11 @@ namespace Grouper.DataAccess.Data.Repository
         {
             DbSet.Add(entity);
 
-            throw new NotImplementedException();
         }
 
         public T Get(int id)
         {
             return DbSet.Find(id);
-            throw new NotImplementedException();
         }
 
         public IEnumerable<T> GetAll(System.Linq.Expressions.Expression<Func<T, bool>> filter = null, Func<System.Linq.IQueryable<T>, System.Linq.IOrderedQueryable<T>> orderBy = null, string includeProperties = null)
