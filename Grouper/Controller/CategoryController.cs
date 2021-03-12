@@ -24,5 +24,18 @@ namespace Grouper.Controller
         {
             return Json(new {data = _unitOfWork.Category.GetAll()});
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var objFromDB = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
+            if (objFromDB==null)
+            {
+                return Json(new {success = false, message = "delete fail "});
+            }
+            _unitOfWork.Category.Remove(objFromDB);
+            _unitOfWork.Save();
+            return Json(new {success = true, message = "delete success"});
+        }
     }
 }
