@@ -34,7 +34,7 @@ namespace Grouper.DataAccess.Data.Repository
         public IEnumerable<T> GetAll(System.Linq.Expressions.Expression<Func<T, bool>> filter = null, Func<System.Linq.IQueryable<T>, System.Linq.IOrderedQueryable<T>> orderBy = null, string includeProperties = null)
         {
             IQueryable<T> query = DbSet;
-            if (query != null)
+            if (filter != null)
             {
                 query = query.Where(filter);
             }
