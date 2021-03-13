@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Grouper.DataAccess.Data.Repository.IRepository;
@@ -25,19 +26,33 @@ namespace Grouper.Controller
         [HttpGet]
         public IActionResult Get()
         {
-            return Json(new {data = _unitOfWork.Category.GetAll()});
+            return Json(new {data = _unitOfWork.MenuItem.GetAll(null,null,"Category,FoodType")});
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var objFromDB = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
-            if (objFromDB==null)
+            try
             {
-                return Json(new {success = false, message = "delete fail "});
+                var objFromDB = _unitOfWork.MenuItem.GetFirstOrDefault(u => u.Id == id);
+                if (objFromDB == null)
+                {
+                    return Json(new { success = false, message = "delete fail " });
+                }
+
+                var imagePath = Path.Combine(_webHostEnvironment.WebRootPath, objFromDB.Image.TrimStart('\\'));
+                if (System.IO.File.Exists(imagePath))
+                {
+                    System.IO.File.Delete(imagePath);
+                }
+                _unitOfWork.MenuItem.Remove(objFromDB);
+                _unitOfWork.Save();
             }
-            _unitOfWork.Category.Remove(objFromDB);
-            _unitOfWork.Save();
+            catch (Exception e)
+            {
+                return Json(new { success = false, message = "delete fail " });
+            }
+           
             return Json(new {success = true, message = "delete success"});
         }
     }
