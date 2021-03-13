@@ -15,7 +15,7 @@ namespace Grouper.DataAccess.Data.Repository
             _db = db;
         }
 
-        public IEnumerable<SelectListItem> GetCategoryListForDropDown()
+        public IEnumerable<SelectListItem> GetFoodTypeListForDropDown()
         {
             return _db.FoodType.Select(i => new SelectListItem()
             {
