@@ -27,11 +27,10 @@
     <ProjectReference Include="..\Taste.Models\Grouper.Models.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pages\Admin\MenuItem\" />
     <Folder Include="Pages\Admin\User\" />
     <Folder Include="Pages\Customer\Cart\" />
     <Folder Include="Pages\Customer\Home\" />
-    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\images\menuItems\" />
   </ItemGroup>
 
 </Project>
