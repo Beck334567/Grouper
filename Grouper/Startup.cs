@@ -1,9 +1,12 @@
 using Grouper.DataAccess;
 using Grouper.DataAccess.Data.Repository;
 using Grouper.DataAccess.Data.Repository.IRepository;
+using Grouper.Utility;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,8 +30,13 @@ namespace Grouper
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddIdentity<IdentityUser,IdentityRole>()
+                .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddSingleton<IEmailSender,EmailSender>();
+
+
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddMvc(option => option.EnableEndpointRouting = false)
                 .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Latest);
