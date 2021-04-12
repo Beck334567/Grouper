@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Grouper.DataAccess.Data.Repository.IRepository;
+using Microsoft.AspNetCore.Authorization;
+using Grouper.Utility;
 
 namespace Grouper.Controller
 {
